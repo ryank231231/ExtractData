@@ -24,7 +24,13 @@ jobs:
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
-
+      
+    - name: Enable Developer Command Prompt
+      uses: ilammy/msvc-dev-cmd@v1.5.0
+      with :
+          arch : x86
+          sdk : 10.0.15063.0
+      
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
