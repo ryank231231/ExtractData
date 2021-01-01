@@ -28,7 +28,6 @@ jobs:
     - name: Enable Developer Command Prompt
       uses: ilammy/msvc-dev-cmd@v1.5.0
       with :
-          arch : x86
           sdk : 10.0.15063.0
       
     - name: Build
